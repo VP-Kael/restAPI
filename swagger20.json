@@ -1,0 +1,935 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "No description",
+    "version" : "1.0.0",
+    "title" : "PMS"
+  },
+  "consumes" : [ "application/json" ],
+  "produces" : [ "application/json" ],
+  "paths" : {
+    "/supervisor/{id}" : {
+      "get" : {
+        "summary" : "get by id",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "$ref" : "#/definitions/supervisor"
+            }
+          }
+        }
+      },
+      "put" : {
+        "summary" : "update supervisor",
+        "consumes" : [ ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/supervisor"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "required" : true,
+        "type" : "string"
+      } ]
+    },
+    "/supervisor" : {
+      "post" : {
+        "summary" : "new supervisor",
+        "consumes" : [ ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/supervisor"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          }
+        }
+      }
+    },
+    "/supervisor/{id}/projects" : {
+      "get" : {
+        "summary" : "get all projects for supervisor",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/project"
+              }
+            }
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "required" : true,
+        "type" : "string"
+      } ]
+    },
+    "/client/{id}" : {
+      "get" : {
+        "summary" : "get by id",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "$ref" : "#/definitions/client"
+            }
+          }
+        }
+      },
+      "put" : {
+        "summary" : "update client",
+        "consumes" : [ ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/client"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "required" : true,
+        "type" : "string"
+      } ]
+    },
+    "/client" : {
+      "get" : {
+        "summary" : "get all clients",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/client"
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "summary" : "new client",
+        "consumes" : [ ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/client"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "$ref" : "#/definitions/client"
+            }
+          }
+        }
+      }
+    },
+    "/client/{id}/projects" : {
+      "get" : {
+        "summary" : "get all projects for client",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/project"
+              }
+            }
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "required" : true,
+        "type" : "string"
+      } ]
+    },
+    "/proposal/{id}" : {
+      "get" : {
+        "summary" : "get by id",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "$ref" : "#/definitions/proposal"
+            }
+          }
+        }
+      },
+      "put" : {
+        "summary" : "update proposal",
+        "consumes" : [ ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/proposal"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "required" : true,
+        "type" : "string"
+      } ]
+    },
+    "/proposal" : {
+      "get" : {
+        "summary" : "get all proposals",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/proposal"
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "summary" : "new proposal",
+        "consumes" : [ ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/proposal"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          }
+        }
+      }
+    },
+    "/proposal/{id}/project" : {
+      "post" : {
+        "summary" : "promote proposal to project",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "required" : true,
+        "type" : "string"
+      } ]
+    },
+    "/organisation/{id}" : {
+      "get" : {
+        "summary" : "get by id",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "$ref" : "#/definitions/organisation"
+            }
+          }
+        }
+      },
+      "put" : {
+        "summary" : "update organisation",
+        "consumes" : [ ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/organisation"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "required" : true,
+        "type" : "string"
+      } ]
+    },
+    "/organisation" : {
+      "post" : {
+        "summary" : "new organisation",
+        "consumes" : [ ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/organisation"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          }
+        }
+      }
+    },
+    "/project/{id}" : {
+      "get" : {
+        "summary" : "get by id",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "$ref" : "#/definitions/project"
+            }
+          }
+        }
+      },
+      "put" : {
+        "summary" : "update project",
+        "consumes" : [ ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/project"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "required" : true,
+        "type" : "string"
+      } ]
+    },
+    "/project" : {
+      "get" : {
+        "summary" : "get all projects",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/project"
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "summary" : "new project",
+        "consumes" : [ ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/project"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          }
+        }
+      }
+    },
+    "/coordinator/{id}" : {
+      "get" : {
+        "summary" : "get by id",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "$ref" : "#/definitions/coordinator"
+            }
+          }
+        }
+      },
+      "put" : {
+        "summary" : "update supervisor",
+        "consumes" : [ ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/coordinator"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "required" : true,
+        "type" : "string"
+      } ]
+    },
+    "/coordinator" : {
+      "post" : {
+        "summary" : "new coordinator",
+        "consumes" : [ ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/coordinator"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          }
+        }
+      }
+    },
+    "/coordinator/{id}/projects" : {
+      "get" : {
+        "summary" : "get all projects for coordinator",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/project"
+              }
+            }
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "required" : true,
+        "type" : "string"
+      } ]
+    },
+    "/message/{id}" : {
+      "get" : {
+        "summary" : "get by id",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "$ref" : "#/definitions/message(delete)"
+            }
+          }
+        }
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "required" : true,
+        "type" : "string"
+      } ]
+    },
+    "/message" : {
+      "get" : {
+        "summary" : "get all messages",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/message(delete)"
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "summary" : "new message",
+        "consumes" : [ ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/message(delete)"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status 200"
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "supervisor" : {
+      "type" : "object",
+      "required" : [ "Visibility", "email", "firstName", "id", "lastName" ],
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "description" : "hash id generated by MongoDB"
+        },
+        "firstName" : {
+          "type" : "string"
+        },
+        "lastName" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "contactNumber" : {
+          "type" : "string"
+        },
+        "officeLocation" : {
+          "type" : "string"
+        },
+        "Visibility" : {
+          "type" : "number",
+          "description" : "Binary tine integer: 1 for visible, 0 for invisible"
+        }
+      }
+    },
+    "coordinator" : {
+      "type" : "object",
+      "required" : [ "Visibility", "email", "firstName", "id", "lastName", "officeLocation" ],
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "description" : "hash id from MongoDB"
+        },
+        "firstName" : {
+          "type" : "string"
+        },
+        "lastName" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "contactNumber" : {
+          "type" : "string"
+        },
+        "officeLocation" : {
+          "type" : "string"
+        },
+        "Visibility" : {
+          "type" : "integer",
+          "description" : "Binary tiny integer: 1 for visible, 0 for invisible"
+        }
+      }
+    },
+    "project" : {
+      "type" : "object",
+      "required" : [ "Interal", "Visibility", "activelyUsed", "coordinatorID", "deployed", "id", "proposalID", "status", "subjectID", "supervisorId" ],
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "status" : {
+          "type" : "integer",
+          "description" : "Ternary tiny integer: 0 for new, 1 for in progress, 2 for completed"
+        },
+        "Interal" : {
+          "type" : "integer",
+          "description" : "Binary tiny integer: 0 for Internal, 1 for External"
+        },
+        "deployed" : {
+          "type" : "integer",
+          "description" : "Binary tiny integer: 1 for deployed, 0 for not"
+        },
+        "activelyUsed" : {
+          "type" : "integer",
+          "description" : "Binary tiny integer: 1 for actively used, 0 for not"
+        },
+        "subjectID" : {
+          "type" : "string",
+          "description" : "One project must belong to one subject, SWEN90013"
+        },
+        "industry" : {
+          "type" : "string"
+        },
+        "supervisorId" : {
+          "type" : "string",
+          "description" : "Foreign attribute, connect to supervisor collection"
+        },
+        "coordinatorID" : {
+          "type" : "string",
+          "description" : "Foreign attribute, connect to coordinator collection"
+        },
+        "proposalID" : {
+          "type" : "string",
+          "description" : "Foreign attribute, connect to proposal collection"
+        },
+        "Visibility" : {
+          "type" : "integer",
+          "description" : "Binary tiny integer: 1 for visible, 0 for invisible"
+        }
+      }
+    },
+    "product" : {
+      "type" : "object",
+      "required" : [ "Visibility", "id", "product", "projectID", "studentTeamID" ],
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "product" : {
+          "type" : "string",
+          "description" : "Product store link or binary file of product"
+        },
+        "studentTeamID" : {
+          "type" : "string",
+          "description" : "Foreign attribute, connect to studentTeam collection"
+        },
+        "projectID" : {
+          "type" : "string",
+          "description" : "Foreign attribute, connect to project collection"
+        },
+        "Visibility" : {
+          "type" : "integer"
+        }
+      }
+    },
+    "studentTeam" : {
+      "type" : "object",
+      "required" : [ "Visibility", "id", "teamName" ],
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "teamName" : {
+          "type" : "string"
+        },
+        "teamMumber" : {
+          "type" : "string"
+        },
+        "Visibility" : {
+          "type" : "integer"
+        }
+      }
+    },
+    "supervisorCommunication" : {
+      "type" : "object",
+      "required" : [ "Visibility", "clientID", "date", "id", "senderFlag", "topic" ],
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "clientID" : {
+          "type" : "string",
+          "description" : "only record the client, no connection with client collection"
+        },
+        "date" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "topic" : {
+          "type" : "string"
+        },
+        "senderFlag" : {
+          "type" : "integer",
+          "description" : "1 for supervisor is sender, 0 for receiver"
+        },
+        "supervisorID" : {
+          "type" : "string",
+          "description" : "Foreign attribute, connect to supervisor collection"
+        },
+        "Visibility" : {
+          "type" : "integer"
+        }
+      }
+    },
+    "coordinatorCommunication" : {
+      "type" : "object",
+      "required" : [ "Visibility", "clientID", "date", "id", "senderFlag", "topic" ],
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "clientID" : {
+          "type" : "string",
+          "description" : "only record the client, no connection with client collection"
+        },
+        "date" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "topic" : {
+          "type" : "string"
+        },
+        "senderFlag" : {
+          "type" : "integer",
+          "description" : "1 for supervisor is sender, 0 for receiver"
+        },
+        "coordinatorID" : {
+          "type" : "string",
+          "description" : "Foreign attribute, connect to supervisor collection"
+        },
+        "Visibility" : {
+          "type" : "integer"
+        }
+      }
+    },
+    "proposal" : {
+      "type" : "object",
+      "required" : [ "clientId", "id", "status" ],
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "status" : {
+          "type" : "integer",
+          "description" : "0 for new, 1 for approved"
+        },
+        "outlineOfProject" : {
+          "type" : "string"
+        },
+        "endProductBenefits" : {
+          "type" : "string"
+        },
+        "endProductUse" : {
+          "type" : "string"
+        },
+        "beneficiaries" : {
+          "type" : "string"
+        },
+        "originality" : {
+          "type" : "string"
+        },
+        "clientId" : {
+          "type" : "string",
+          "description" : "Foreign attribute, connect to client collection"
+        },
+        "date" : {
+          "type" : "string",
+          "format" : "date"
+        },
+        "Visibility" : {
+          "type" : "integer"
+        }
+      }
+    },
+    "client" : {
+      "type" : "object",
+      "required" : [ "Visibility", "email", "firstName", "id", "lastName" ],
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "firstName" : {
+          "type" : "string"
+        },
+        "lastName" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "contactNumber" : {
+          "type" : "string"
+        },
+        "technicalAbility" : {
+          "type" : "string"
+        },
+        "secondaryContactFirstName" : {
+          "type" : "string"
+        },
+        "secondaryContactLastName" : {
+          "type" : "string"
+        },
+        "secondaryContactEmail" : {
+          "type" : "string"
+        },
+        "secondaryContactContactName" : {
+          "type" : "string"
+        },
+        "organisation" : {
+          "type" : "string",
+          "description" : "Foreign attribute, connect to organisation collection"
+        },
+        "Visibility" : {
+          "type" : "integer"
+        }
+      }
+    },
+    "organisation" : {
+      "type" : "object",
+      "required" : [ "Visibility", "id", "name" ],
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "size" : {
+          "type" : "string"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "Visibility" : {
+          "type" : "integer"
+        }
+      }
+    },
+    "message(delete)" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "fromUserId" : {
+          "type" : "string"
+        },
+        "toUserId" : {
+          "type" : "string"
+        },
+        "subject" : {
+          "type" : "string"
+        },
+        "body" : {
+          "type" : "string"
+        },
+        "date" : {
+          "type" : "string"
+        }
+      }
+    },
+    "clientNote" : {
+      "type" : "object",
+      "required" : [ "Note", "clientID", "id" ],
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "Note" : {
+          "type" : "string"
+        },
+        "clientID" : {
+          "type" : "string",
+          "description" : "Foreign attribute, connect to client collection"
+        }
+      }
+    }
+  }
+}
