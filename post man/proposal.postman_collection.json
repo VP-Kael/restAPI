@@ -1,0 +1,257 @@
+{
+	"info": {
+		"_postman_id": "41c9ea1c-0d2e-4825-9c74-3930e6605c48",
+		"name": "proposal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "find all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/proposal",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"proposal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find particular",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/proposal?outline=very good proposal 1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"proposal"
+					],
+					"query": [
+						{
+							"key": "outline",
+							"value": "very good proposal 1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "proposal_client find all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/proposal_client",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"proposal_client"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find proposal of particular client",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/proposal_client?clientID=5cd38d97c202460ebfc2816f",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"proposal_client"
+					],
+					"query": [
+						{
+							"key": "clientID",
+							"value": "5cd38d97c202460ebfc2816f"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post new one",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/proposal_client?outline=excellent proposal&benefit=a lot&use=useful&beneficiaries=Unimelb&clientiD=5cd38d97c202460ebfc2816f",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"proposal_client"
+					],
+					"query": [
+						{
+							"key": "outline",
+							"value": "excellent proposal"
+						},
+						{
+							"key": "benefit",
+							"value": "a lot"
+						},
+						{
+							"key": "use",
+							"value": "useful"
+						},
+						{
+							"key": "beneficiaries",
+							"value": "Unimelb"
+						},
+						{
+							"key": "clientiD",
+							"value": "5cd38d97c202460ebfc2816f"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "put",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/proposal:put?outline=excellent proposal&use=very useful",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"proposal:put"
+					],
+					"query": [
+						{
+							"key": "outline",
+							"value": "excellent proposal"
+						},
+						{
+							"key": "use",
+							"value": "very useful"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "soft delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/proposal:delete?soft=1&outline=excellent proposal",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"proposal:delete"
+					],
+					"query": [
+						{
+							"key": "soft",
+							"value": "1"
+						},
+						{
+							"key": "outline",
+							"value": "excellent proposal"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "hard delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/proposal:delete?soft=0&outline=excellent proposal",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"proposal:delete"
+					],
+					"query": [
+						{
+							"key": "soft",
+							"value": "0"
+						},
+						{
+							"key": "outline",
+							"value": "excellent proposal"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

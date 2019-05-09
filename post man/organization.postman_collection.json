@@ -1,0 +1,204 @@
+{
+	"info": {
+		"_postman_id": "11ee9b3c-c074-451c-92a8-2444f51083ef",
+		"name": "organization",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "find particular",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/organization?name=SHIELD",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"organization"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "SHIELD"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/organization?",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"organization"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "SHIELD",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post one",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/organization:post?name=Bruce Wayne&size=200&description=",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"organization:post"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Bruce Wayne"
+						},
+						{
+							"key": "size",
+							"value": "200"
+						},
+						{
+							"key": "description",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "put one",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/organization:put?name=Bruce Wayne&size=5",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"organization:put"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Bruce Wayne"
+						},
+						{
+							"key": "size",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "soft delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/organization:delete?name=Bruce Wayne&soft=1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"organization:delete"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Bruce Wayne"
+						},
+						{
+							"key": "soft",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "hard delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/organization:delete?name=Bruce Wayne&soft=0",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"organization:delete"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Bruce Wayne"
+						},
+						{
+							"key": "soft",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

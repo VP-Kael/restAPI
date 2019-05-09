@@ -1,0 +1,196 @@
+{
+	"info": {
+		"_postman_id": "59a96954-e3a9-4072-8ef3-88c0f00ca82e",
+		"name": "team",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/team?",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"team"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "team",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get particular",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/team?name=team",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"team"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "team"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post one",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/team:post?name=team",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"team:post"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "team"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "put",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/team:put?name=team&change=teamK",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"team:put"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "team"
+						},
+						{
+							"key": "change",
+							"value": "teamK"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "hard delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/team:delete?soft=0&name=one new team",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"team:delete"
+					],
+					"query": [
+						{
+							"key": "soft",
+							"value": "0"
+						},
+						{
+							"key": "name",
+							"value": "one new team"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "soft delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/team:delete?soft=1&name=teamK",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"team:delete"
+					],
+					"query": [
+						{
+							"key": "soft",
+							"value": "1"
+						},
+						{
+							"key": "name",
+							"value": "teamK"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

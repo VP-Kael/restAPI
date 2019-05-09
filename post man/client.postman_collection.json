@@ -1,0 +1,269 @@
+{
+	"info": {
+		"_postman_id": "6e53dfb3-9c62-4c33-b052-f6d07a4d5fcc",
+		"name": "client",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get client from organization name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/client_organization?name=SHIELD",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"client_organization"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "SHIELD"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get client from name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/client?firstName=Tony&lastName=Stark",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"client"
+					],
+					"query": [
+						{
+							"key": "firstName",
+							"value": "Tony"
+						},
+						{
+							"key": "lastName",
+							"value": "Stark"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all client",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/client",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"client"
+					],
+					"query": [
+						{
+							"key": "firstName",
+							"value": "Tony",
+							"disabled": true
+						},
+						{
+							"key": "lastName",
+							"value": "Stark",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add one new client with organization",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/client:post?firstName=Steve&lastName=Rogers&email=cap.america@marvel.com&number=1234567&organName=Avengers",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"client:post"
+					],
+					"query": [
+						{
+							"key": "firstName",
+							"value": "Steve"
+						},
+						{
+							"key": "lastName",
+							"value": "Rogers"
+						},
+						{
+							"key": "email",
+							"value": "cap.america@marvel.com"
+						},
+						{
+							"key": "number",
+							"value": "1234567"
+						},
+						{
+							"key": "organName",
+							"value": "Avengers"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "put normal attribute",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/client:put?firstName=Steve&lastName=Rogers&newNumber=7654321",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"client:put"
+					],
+					"query": [
+						{
+							"key": "firstName",
+							"value": "Steve"
+						},
+						{
+							"key": "lastName",
+							"value": "Rogers"
+						},
+						{
+							"key": "newNumber",
+							"value": "7654321"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update organization of client",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/client/:put_organization'?newOrgan=SHIELD&firstName=Steve&lastName=Rogers",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"client",
+						":put_organization'"
+					],
+					"query": [
+						{
+							"key": "newOrgan",
+							"value": "SHIELD"
+						},
+						{
+							"key": "firstName",
+							"value": "Steve"
+						},
+						{
+							"key": "lastName",
+							"value": "Rogers"
+						}
+					],
+					"variable": [
+						{
+							"key": "put_organization",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "soft delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/client:delete?soft=1&firstName=Steve&lastName=Rogers",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"client:delete"
+					],
+					"query": [
+						{
+							"key": "soft",
+							"value": "1"
+						},
+						{
+							"key": "firstName",
+							"value": "Steve"
+						},
+						{
+							"key": "lastName",
+							"value": "Rogers"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

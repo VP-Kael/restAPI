@@ -1,0 +1,189 @@
+{
+	"info": {
+		"_postman_id": "474b1688-f8e8-4108-ad0b-a86bef48aec6",
+		"name": "note",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "no exist client",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/note?firstName=Tony",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"note"
+					],
+					"query": [
+						{
+							"key": "firstName",
+							"value": "Tony"
+						},
+						{
+							"key": "lastName",
+							"value": "Stark",
+							"disabled": true
+						},
+						{
+							"key": "order",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all notes from one client",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/note?firstName=Tony&lastName=Stark",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"note"
+					],
+					"query": [
+						{
+							"key": "firstName",
+							"value": "Tony"
+						},
+						{
+							"key": "lastName",
+							"value": "Stark"
+						},
+						{
+							"key": "order",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add new note",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/note:post?firstName=Tony&lastName=Stark&note=Bazinga",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"note:post"
+					],
+					"query": [
+						{
+							"key": "firstName",
+							"value": "Tony"
+						},
+						{
+							"key": "lastName",
+							"value": "Stark"
+						},
+						{
+							"key": "note",
+							"value": "Bazinga"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "soft delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/note:delete?soft=1&note=Bazinga",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"note:delete"
+					],
+					"query": [
+						{
+							"key": "soft",
+							"value": "1"
+						},
+						{
+							"key": "note",
+							"value": "Bazinga"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "hard delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/note:delete?soft=0&note=Bazinga",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"note:delete"
+					],
+					"query": [
+						{
+							"key": "soft",
+							"value": "0"
+						},
+						{
+							"key": "note",
+							"value": "Bazinga"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

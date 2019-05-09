@@ -1,0 +1,312 @@
+{
+	"info": {
+		"_postman_id": "253a3e62-bf46-43b2-abf2-97c19408b5eb",
+		"name": "project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "find all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/project",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"project"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find particular",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/project?name=project 2.2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"project"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "project 2.2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get project from supervisor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/project_supervisor?firstName=Supervisor&lastName=no.1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"project_supervisor"
+					],
+					"query": [
+						{
+							"key": "firstName",
+							"value": "Supervisor"
+						},
+						{
+							"key": "lastName",
+							"value": "no.1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get project from coordinator",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/project_coordinator?firstName=coordinator&lastName=no.1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"project_coordinator"
+					],
+					"query": [
+						{
+							"key": "firstName",
+							"value": "coordinator"
+						},
+						{
+							"key": "lastName",
+							"value": "no.1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get from proposal",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/project_proposal?outline=very good proposal 4",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"project_proposal"
+					],
+					"query": [
+						{
+							"key": "outline",
+							"value": "very good proposal 4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post one new project",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/project:post?superFirstName=Supervisor&superLastName=no.1&coorFirstName=coordinator&coorLastName=no.1&outline=very good proposal 1&name=new project&subjectID=SWEN90009&industry=CS",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"project:post"
+					],
+					"query": [
+						{
+							"key": "superFirstName",
+							"value": "Supervisor"
+						},
+						{
+							"key": "superLastName",
+							"value": "no.1"
+						},
+						{
+							"key": "coorFirstName",
+							"value": "coordinator"
+						},
+						{
+							"key": "coorLastName",
+							"value": "no.1"
+						},
+						{
+							"key": "outline",
+							"value": "very good proposal 1"
+						},
+						{
+							"key": "name",
+							"value": "new project"
+						},
+						{
+							"key": "subjectID",
+							"value": "SWEN90009"
+						},
+						{
+							"key": "industry",
+							"value": "CS"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update by project name",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/project:put?name=new project&use=1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"project:put"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "new project"
+						},
+						{
+							"key": "use",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "soft delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/project:delete?soft=1&name=new project",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"project:delete"
+					],
+					"query": [
+						{
+							"key": "soft",
+							"value": "1"
+						},
+						{
+							"key": "name",
+							"value": "new project"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "hard delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/project:delete?soft=0&name=new project",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"project:delete"
+					],
+					"query": [
+						{
+							"key": "soft",
+							"value": "0"
+						},
+						{
+							"key": "name",
+							"value": "new project"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

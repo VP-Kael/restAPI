@@ -1,0 +1,217 @@
+{
+	"info": {
+		"_postman_id": "2a9d7ac5-af35-4b74-a18f-5e6d886b3938",
+		"name": "supervisor",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "find all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/supervisor",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"supervisor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find particular",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/supervisor?firstName=Supervisor&lastName=no.2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"supervisor"
+					],
+					"query": [
+						{
+							"key": "firstName",
+							"value": "Supervisor"
+						},
+						{
+							"key": "lastName",
+							"value": "no.2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/supervisor:post?firstName=super&lastName=no.4&number=47234",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"supervisor:post"
+					],
+					"query": [
+						{
+							"key": "firstName",
+							"value": "super"
+						},
+						{
+							"key": "lastName",
+							"value": "no.4"
+						},
+						{
+							"key": "number",
+							"value": "47234"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "soft delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/supervisor:delete?firstName=super&lastName=no.4&soft=1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"supervisor:delete"
+					],
+					"query": [
+						{
+							"key": "firstName",
+							"value": "super"
+						},
+						{
+							"key": "lastName",
+							"value": "no.4"
+						},
+						{
+							"key": "soft",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post one",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/supervisor:post?firstName=super&lastName=no.4&email=dontknow@mail.com&office=ERC",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"supervisor:post"
+					],
+					"query": [
+						{
+							"key": "firstName",
+							"value": "super"
+						},
+						{
+							"key": "lastName",
+							"value": "no.4"
+						},
+						{
+							"key": "email",
+							"value": "dontknow@mail.com"
+						},
+						{
+							"key": "office",
+							"value": "ERC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "hard delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/supervisor:delete?firstName=super&lastName=no.4&soft=0",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"supervisor:delete"
+					],
+					"query": [
+						{
+							"key": "firstName",
+							"value": "super"
+						},
+						{
+							"key": "lastName",
+							"value": "no.4"
+						},
+						{
+							"key": "soft",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
