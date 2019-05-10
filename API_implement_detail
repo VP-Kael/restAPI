@@ -1,0 +1,52 @@
+supervisor: there is no supervisor ID now, so the identify of supervisor is basing on the firstName and lastName
+{
+	supervisor get by name: done,
+	supervisor update by name: done,
+	new supervisor: done,
+	get all projects for supervisor: done, in projectServer.js, /api/project_supervisor
+}
+
+client: no id here, identify is fisrt and last name
+{
+	get by name: done,
+	update by name: done,
+	get all clients: done, 
+	new client: done, organization needed
+	get all projects: done, the client belongs to the diffrent micro service with proposal and project, therefore profile service should pass client._id to project service, and get all proposal according to this _id, finnally aquire all project of one client. get poposal from client._id is in proposalServer.js
+}
+
+proposal:
+{
+	get by id: done, yet no id here, the searching is based on outline now.
+	put by outline: done,
+	get all: done,
+	new proposal: done, client needed, yet the client._id is supplied by profile serivce,
+	get all project for poposal: done, in projectServer.js
+}
+
+organization: 
+{
+	get by id: done, get by name,
+	put by name: done,
+	new organization: done,
+}
+
+project:
+{
+	get by id: done, get by name,
+	put by name: done,
+	get all project: done,
+	new project: done, supervisor, coordinator, proposal needed. Btw, this post function is one of my favorite,
+}
+
+coordinator:
+{
+	get by id: done, get by name,
+	update by name: done,
+	new coordinator: done,
+	get all project for coordinator: done, in projectServer.js,
+}
+
+message: not implemented, belongs to Sprint2
+
+All status of successful responses are 200, including the query of no existing record from the database. All status of traceback an error is 400. 
