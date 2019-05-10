@@ -30,18 +30,18 @@ app.get('/api/organization', (req, res)=>{
         clientOrganizationModel.find({Visibility: 1}, "-id -Visibility", {sort: {OrganizationName: 1, OrganizationSize: 1}}, (err, data)=>{
             if (!err){
                 console.log("find all");
-                res.send(data);
+                res.status(200).send(data);
             }else{
-                res.send(err);
+                res.status(400).send(err);
             }
         })
     }else{
         clientOrganizationModel.find({Visibility: 1, OrganizationName: req.query.name}, "-id -Visibility", {sort: {organizationName: 1}}, (err, data)=>{
             if (!err){
                 console.log("find name from query");
-                res.send(data);
+                res.status(200).send(data);
             }else{
-                res.send(err);
+                res.status(400).send(err);
             }
         })
     }
@@ -70,9 +70,9 @@ app.put('/api/organization:put', (req, res)=>{
         //new: true for display the updated new record
         if (!err){
             console.log("find one and update success");
-            res.send(item);
+            res.status(200).send(item);
         }else{
-            res.send(err);
+            res.status(400).send(err);
         }
     });
 });
@@ -82,10 +82,10 @@ app.delete('/api/organization:delete', (req, res)=>{
         clientOrganizationModel.findOneAndDelete({Visibility: 1, OrganizationName: req.query.name}, {sort: {_id: 1}}, (err, data)=>{
             if (!err){
                 console.log("find one and delete success");
-                res.send(data);
+                res.status(200).send(data);
             }else{
                 console.log(err);
-                res.send(err);
+                res.status(400).send(err);
             }
         })
     }else{
@@ -95,9 +95,9 @@ app.delete('/api/organization:delete', (req, res)=>{
             {upsert:false, new:true}).populate('ads').exec(function(err, item){
             if (!err){
                 console.log("soft delete");
-                res.send(item);
+                res.status(200).send(item);
             }else{
-                res.send(err);
+                res.status(400).send(err);
             }
         });
     }

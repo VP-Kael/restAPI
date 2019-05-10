@@ -42,7 +42,7 @@ app.get('/api/note', (req, res)=>{
                     let clientID = data1[0]._id;
                     clientNoteModel.find({Visibility: 1, ClientID: clientID}, (err2, data2) => {
                         if (!err2) {
-                            res.send(data2);
+                            res.status(200).send(data2);
                         } else {
                             res.status(400).send(err2);
                         }

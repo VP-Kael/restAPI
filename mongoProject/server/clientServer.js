@@ -31,28 +31,31 @@ app.get('/api/client_organization', (req, res)=>{
         clientModel.find({Visibility: 1}, "-id -Visibility", {sort: {FirstName: 1, LastName: 1}}, (err, data)=>{
             if (!err){
                 console.log("find all");
-                res.send(data);
+                res.status(200).send(data);
             }else{
-                res.send(err);
+                res.status(400).send(err);
             }
         })
     }else{
         clientOrganizationModel.findOne({Visibility: 1, OrganizationName: req.query.name}, (err1, data1)=>{
             if (data1 == null){
                 console.log("Organization does not exist");
+                res.status(400).send("Organization does not exit");
             }else{
                 if (!err1){
                     console.log(data1._id);
                     clientModel.findOne({Visibility: 1, ClientOrganizationID: data1._id}, (err2, data2)=>{
                         if (!err2){
                             console.log("fine one client from organization name");
-                            res.send(data2);
+                            res.status(200).send(data2);
                         }else{
                             console.log(err2);
+                            res.status(400).send(err2);
                         }
                     })
                 }else{
                     console.log(err1);
+                    res.status(400).send(err1);
                 }
             }
         })
@@ -60,22 +63,22 @@ app.get('/api/client_organization', (req, res)=>{
 });
 
 app.get('/api/client', (req, res)=>{
-   if (Object.keys(req.query).length ===0){
+   if (Object.keys(req.query).length === 0){
        clientModel.find({Visibility: 1}, "-_id -Visibility", {sort: {FirstName: 1, LastName: 1}}, (err, data)=>{
            if (!err){
                console.log("find all");
-               res.send(data);
+               res.status(200).send(data);
            }else{
-               res.send(err);
+               res.status(400).send(err);
            }
        })
    }else{
        clientModel.findOne({Visibility: 1, FirstName: req.query.firstName, LastName: req.query.lastName}, (err, data)=>{
            if (!err){
                console.log("find one success");
-               res.send(data);
+               res.status(200).send(data);
            }else{
-               res.send(err);
+               res.status(400).send(err);
            }
        })
    }
@@ -106,7 +109,7 @@ app.post('/api/client:post', (req, res)=>{
                 }
             })
         }else{
-            res.send(err1);
+            res.status(400).send(err1);
         }
     });
 });
@@ -119,9 +122,9 @@ app.put('/api/client:put', (req, res)=>{
         //new: true for display the updated new record
         if (!err){
             console.log("find one and update success");
-            res.send(item);
+            res.status(200).send(item);
         }else{
-            res.send(err);
+            res.status(400).send(err);
         }
     });
 });
@@ -136,7 +139,7 @@ app.put('/api/client/:put_organization', (req, res)=>{
                    if (!err2){
                        console.log("update one organization success");
                        console.log("Hail Hydra");
-                       res.send(data2);
+                       res.status(200).send(data2);
                    }else{
                        res.status(400).send(err2);
                    }
@@ -150,13 +153,13 @@ app.put('/api/client/:put_organization', (req, res)=>{
 app.delete('/api/client:delete', (req, res)=>{
     if (req.query.soft !== '1'){
         console.log("client should be hard deleted");
-        res.send("client should be hard deleted");
+        res.status(200).send("client should be hard deleted");
     }else{
        clientModel.findOneAndUpdate({Visibility: 1, FirstName: req.query.firstName, LastName: req.query.lastName},
            {$set: {Visibility: 0}},
            {upsert: false, new: true}).populate('ads').exec(function(err, data){
                if (!err){
-                   res.send(data);
+                   res.status(200).send(data);
                }else{
                    res.status(400).send(err);
                }
